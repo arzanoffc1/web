@@ -458,33 +458,31 @@ body {
     }
 
     function searchItems() {
-        const input = document.getElementById('searchInput').value.toLowerCase();
-        const sections = document.querySelectorAll('.section');
-        const items = document.querySelectorAll('.item');
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const sections = document.querySelectorAll('.section');
 
-        let foundCategory = false;
+    sections.forEach(section => {
+        const category = section.getAttribute('data-category').toLowerCase();
+        const items = section.querySelectorAll('.item');
 
-        sections.forEach(section => {
-            const category = section.getAttribute('data-category');
-            if (category.includes(input)) {
-                section.style.display = 'block';
-                foundCategory = true;
+        let categoryMatch = category.includes(input);
+        let itemMatch = false;
+
+        items.forEach(item => {
+            const infoText = item.innerText.toLowerCase();
+            if (infoText.includes(input)) {
+                item.style.display = 'block';
+                itemMatch = true;
             } else {
-                section.style.display = 'none';
+                item.style.display = 'none';
             }
         });
 
-        if (!foundCategory) {
-            items.forEach(item => {
-                const infoText = item.innerText.toLowerCase();
-                item.style.display = infoText.includes(input) ? 'block' : 'none';
-            });
+        // Tampilkan kategori hanya jika cocok atau ada item yang cocok
+        section.style.display = (categoryMatch || itemMatch) ? 'block' : 'none';
+    });
+}
 
-            sections.forEach(section => {
-                section.style.display = 'block';
-            });
-        }
-    }
 </script>
     <footer>
         ©arzanoffc
