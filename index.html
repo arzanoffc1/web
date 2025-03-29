@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL PRODUK ARZAN_OFFC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; 
+        }
+
+        .header {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #32CD32;
+            text-transform: uppercase;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #32CD32;
+            border-radius: 8px;
+            outline: none;
+            background: #121212;
+            color: #fff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #32CD32;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #32CD32;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .item img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px #32CD32;
+        }
+
+        .info-text {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #32CD32;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background: #28a428;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    Special Promo Takbir
+</div>
+
+<div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="searchItems()" placeholder="Cari produk...">
+</div>
+
+<!-- Blok Produk Panel Jasteb -->
+<div class="section" data-category="panel-jasteb">
+    <div class="section-title">ALL PANEL</div>
+    <div class="container">
+        <div class="item">
+            <img src="panel-jasteb.png" alt="Panel Jasteb">
+            <p class="info-text">Panel Jasteb Murni - 7 Hari</p>
+            <p class="info-text">Harga: <s>Rp 10.000</s> Rp 8.000</p>
+            <button class="buy-button" onclick="buyProduct('Panel Jasteb 7 Hari', '8.000')">BUY</button>
+        </div>
+
+        <div class="item">
+            <img src="panel-jasteb.png" alt="Panel Jasteb">
+            <p class="info-text">Panel Jasteb Murni - 30 Hari</p>
+            <p class="info-text">Harga: <s>Rp 25.000</s> Rp 20.000</p>
+            <button class="buy-button" onclick="buyProduct('Panel Jasteb 30 Hari', '20.000')">BUY</button>
+        </div>
+    </div>
+</div>
+        <div class="item">
+            <img src="panel.png" alt="Admin Panel Pterodactyl">
+            <p class="info-text">Admin Panel Pterodactyl</p>
+            <p class="info-text">Masa Aktif: 1 Bulan</p>
+            <p class="info-text">Harga: Rp 10.000</p>
+            <button class="buy-button" onclick="buyProduct('Admin Panel Pterodactyl', '10.000')">BUY</button>
+        </div>
+    </div>
+</div>
+<!-- Blok Produk Server Panel Jasteb -->
+<div class="section" data-category="Admin-panel-jasteb">
+    <div class="section-title">ADMIN PANEL JASTEB</div>
+    <div class="container">
+        <div class="item">
+            <img src="server.png" alt="Admin Panel Jasteb">
+            <p class="info-text">Harga: <s>Rp 90.000</s> Rp 49.500</p>
+            <p class="info-text">Limit: Unlimited</p>
+            <p class="info-text">Max User: Unlimited</p>
+            <p class="info-text">Masa aktif: 1 Bulan</p>
+            <button class="buy-button" onclick="buyProduct('Server Panel Jasteb', '49.500')">BUY</button>
+        </div>
+    </div>
+</div>
+<!-- Blok Produk Script -->
+<div class="section" data-category="script">
+    <div class="section-title">🤖 ALL SCRIPT 🤖</div>
+    <div class="container">
+        <div class="item">
+            <img src="https://g.top4top.io/p_3347ars140.jpg" alt="Script Jasteb">
+            <p class="info-text">Script panel Jasteb</p>
+            <p class="info-text">Harga: <s>Rp 50.000</s> Rp 27.500</p>
+            <p class="info-text">Suprun: vps linux, windows dan termux open port 587</p>
+            <p class="info-text">Bonus: free connect data pusat 2 Bulan</p>
+            <p class="info-text">Script ini versi untuk penggunaan pribadi, tidak support untuk berjualan/sewa panel jasteb</p>
+            <button class="buy-button" onclick="buyProduct('Script Jasteb', '27.500')">BUY</button>
+        </div>
+
+        <div class="item">
+            <img src="https://f.top4top.io/p_3347k96ty0.jpg" alt="Script Manajemen Panel Jasteb">
+            <p class="info-text">Script admin Panel Jasteb</p>
+            <p class="info-text">Harga: <s>Rp 70.000</s> Rp 38.500</p>
+            <p class="info-text">Suprun: vps linux open port 587</p>
+            <p class="info-text">Bonus: free connect data pusat 2 Bulan</p>
+            <p class="info-text">Script ini versi untuk yang ingin sewa/jual panel jasteb!</p>
+            <button class="buy-button" onclick="buyProduct('Script Manajemen Panel Jasteb', '38.500')">BUY</button>
+        </div>
+    </div>
+</div>
+<!-- Blok server -->
+<div class="section" data-category="pusat">
+    <div class="section-title">DATA PUSAT RESULT</div>
+    <div class="container">
+        <div class="item">
+            <img src="https://c.top4top.io/p_3363uaqxv0.jpg">
+            <p class="info-text">Data Pusat Result</p>
+            <p class="info-text">Harga: <s>Rp 20.000</s> Rp 16.000</p>
+            <p class="info-text">Aktif: 1 Bulan</p>
+            <p class="info-text">Limit: Unlimited ress</p>
+            <button class="buy-button" onclick="buyProduct('Pusat data ress', '16.000')">BUY</button>
+        </div>
+    </div>
+</div>
+
+<!-- Blok Produk VPS -->
+<div class="section" data-category="vps">
+    <div class="section-title">☁ VPS DigitalOcean ☁</div>
+    <div class="container">
+        <div class="item">
+            <img src="vps.png" alt="VPS 1 GB - 1 Core">
+            <p class="info-text">VPS DigitalOcean</p>
+            <p class="info-text">RAM: 1 GB</p>
+            <p class="info-text">CPU: 1 Core</p>
+            <p class="info-text">Harga: Rp 20.000 / Bulan</p>
+            <button class="buy-button" onclick="buyProduct('VPS 1 GB - 1 Core', '20.000')">BUY</button>
+        </div>
+
+        <div class="item">
+            <img src="vps.png" alt="VPS 2 GB - 2 Core">
+            <p class="info-text">VPS DigitalOcean</p>
+            <p class="info-text">RAM: 2 GB</p>
+            <p class="info-text">CPU: 2 Core</p>
+            <p class="info-text">Harga: Rp 30.000 / Bulan</p>
+            <button class="buy-button" onclick="buyProduct('VPS 2 GB - 2 Core', '30.000')">BUY</button>
+        </div>
+
+        <div class="item">
+            <img src="vps.png" alt="VPS 4 GB - 2 Core">
+            <p class="info-text">VPS DigitalOcean</p>
+            <p class="info-text">RAM: 4 GB</p>
+            <p class="info-text">CPU: 2 Core</p>
+            <p class="info-text">Harga: Rp 35.000 / Bulan</p>
+            <button class="buy-button" onclick="buyProduct('VPS 4 GB - 2 Core', '35.000')">BUY</button>
+        </div>
+
+        <div class="item">
+            <img src="vps.png" alt="VPS 8 GB - 2 Core">
+            <p class="info-text">VPS DigitalOcean</p>
+            <p class="info-text">RAM: 8 GB</p>
+            <p class="info-text">CPU: 2 Core</p>
+            <p class="info-text">Harga: Rp 45.000 / Bulan</p>
+            <button class="buy-button" onclick="buyProduct('VPS 8 GB - 2 Core', '45.000')">BUY</button>
+        </div>
+
+        <div class="item">
+            <img src="vps.png" alt="VPS 8 GB - 4 Core">
+            <p class="info-text">VPS DigitalOcean</p>
+            <p class="info-text">RAM: 8 GB</p>
+            <p class="info-text">CPU: 4 Core</p>
+            <p class="info-text">Harga: Rp 50.000 / Bulan</p>
+            <button class="buy-button" onclick="buyProduct('VPS 8 GB - 4 Core', '50.000')">BUY</button>
+        </div>
+    </div>
+</div>
+<script>
+    function buyProduct(product, price) {
+        const phoneNumber = '6285601672998';
+        const message = `Halo, saya tertarik membeli:
+
+${product}
+Harga: Rp ${price}
+
+Apa masih tersedia?`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    }
+
+     
+    function searchItems() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let sections = document.querySelectorAll('.section');
+
+        sections.forEach(section => {
+            let items = section.querySelectorAll('.item');
+            let found = false;
+
+            items.forEach(item => {
+                let textContent = item.innerText.toLowerCase(); // Cari dalam seluruh elemen item
+                if (textContent.includes(input)) {
+                    item.style.display = "block";
+                    found = true;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            // Tampilkan section hanya jika ada produk yang cocok
+            section.style.display = found ? "block" : "none";
+        });
+    }
+</script>
+
+<footer>
+    ©arzanoffc
+</footer>
+<div style="position: fixed; top: 0; width: 100%; background: transparent; color: white; text-align: center; padding: 15px; z-index: 10; display: flex; align-items: center;">
+        <img src="https://h.top4top.io/p_3364gvtx60.png" alt="Notification Icon" style="width: 30px; height: 30px; margin-right: 10px;">
+        <marquee behavior="scroll" direction="left" style="color: white; font-size: 14px;">promo terbatas!!!!</marquee>
+    </div>
+</body>
+</html>
